@@ -230,7 +230,7 @@ subprojects {
             options.fork = true
 
             if (OperatingSystem.current().isMacOsX()) {
-                options.compilerArgs << '-Werror'
+                //options.compilerArgs << '-Werror'
                 options.forkOptions.executable = "/usr/libexec/java_home -v $targetCompatibility".execute().text.trim() + "/bin/javac"
             } else if (project.hasProperty('compiler.location')) {
                 // quotes required on TeamCity to pass property with spaces, e.g. a Windows file path
@@ -300,5 +300,3 @@ String getVersion(def baseVersion) {
 }
 
 wrapper.gradleVersion = '2.4-20150209230027+0000'
-
-
